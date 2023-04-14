@@ -3,10 +3,11 @@ class RouterHealth {
 	readonly expressRouter: Router
 	constructor() {
 		this.expressRouter = Router()
-		this.mountRoutes()
 	}
-	mountRoutes() {
-		this.expressRouter.get('/', (_req: Request, res: Response) => res.send('Servidor Cargado OK'))
+	mountroutes() {
+		this.expressRouter.get('/', (_req: Request, res: Response) => {
+			res.send('Servido cargado Correctamente')
+		})
 	}
 }
 

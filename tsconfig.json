@@ -9,7 +9,7 @@
 		"sourceMap": true /* podamos habilitar la definición del ubicación de nuestros archivos JS */,
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
-		"strict": true,
+		"strict": false /* cambiaremos a false para permitir hacer definiciones masivas */,
 		"baseUrl": "./" /*definimos donde quedará el codigo transpilado*/,
 		"outDir": "./build" /* definimos donde quedará nuestro codigo compilado JS*/
 	},
