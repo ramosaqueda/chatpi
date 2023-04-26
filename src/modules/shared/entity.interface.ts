@@ -3,5 +3,5 @@ export interface IEntity<Properties, PropertiesUpdate> {
 	//utilizaremos tipos genericos Propperties y ProppertiesUpdate para que sean utilizadas independent de la entidad
 	properties: () => Properties
 	delete: () => void
-	update: (fields: Properties) => void
+	update: (fields: PropertiesUpdate) => void
 }

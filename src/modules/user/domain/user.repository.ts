@@ -4,11 +4,10 @@ import User, { UserProperties } from './user'
 
 // inversion de dependencias.
 export interface UserRepository {
-	list(): UserProperties[]
-	lsitOne(guid: string): User
-	insert(user: User): User
-	update(user: User): User
-	delelete(guid: string): User
-
+	list(): Promise<User[]>
+	listOne(guid: string): Promise<User>
+	insert(user: User): Promise<User>
+	update(user: User): Promise<User>
+	delete(guid: string): Promise<User>
 	//aplication
 }
