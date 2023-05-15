@@ -1,6 +1,6 @@
 import http from 'http'
 import { Application } from 'express'
-import { Bootstrap } from './base.bootsrap'
+import { Bootstrap } from './base.bootstrap'
 export default class extends Bootstrap {
 	constructor(private readonly app: Application) {
 		super()

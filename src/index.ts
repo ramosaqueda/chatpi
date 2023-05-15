@@ -1,14 +1,17 @@
-import ServerBoostrap from './bootstrap/server.bootsrap'
-import { Bootstrap } from './bootstrap/base.bootsrap'
+import ServerBootstrap from './bootstrap/server.bootstrap'
+import DatabaseBootstrap from './bootstrap/database.bootstrap'
+import { Bootstrap } from './bootstrap/base.bootstrap'
 import Application from './app'
-import serverBootsrap from './bootstrap/server.bootsrap'
 
-const serverBoostrap: Bootstrap = new ServerBoostrap(Application)
+const serverBootstrap: Bootstrap = new ServerBootstrap(Application)
+const databaseBootstrap: Bootstrap = new DatabaseBootstrap()
+
 ;(async () => {
-	try {
-		const resultServer = await serverBoostrap.initialize()
-		console.log(resultServer)
-	} catch (error) {
-		console.log(error)
-	}
+  try {
+    await serverBootstrap.initialize()
+    await databaseBootstrap.initialize()
+    console.log('Server started successfully')
+  } catch (error) {
+    console.log(error)
+  }
 })()
