@@ -1,4 +1,5 @@
 export enum DomainExceptionCode {
+	//incluiremos varias propiedades configuradas como llave y valor
 	DEFAULT_DOMAIN_EXCEPTION = 'DEFAULT_DOMAIN_EXCEPTION',
 	USER_NAME_REQUIRED = 'USER_NAME_REQUIRED',
 	USER_LASTNAME_REQUIRED = 'USER_LASTNAME_REQUIRED',
@@ -10,9 +11,10 @@ export enum DomainExceptionCode {
 	USER_NOT_FOUND = 'USER_NOT_FOUND',
  }
 
- export abstract class DomainException extends Error {
+ //crearemos una clase padre que capture errores, ademas será unca clase heredada de
+ export abstract class DomainException extends Error { //la clase error es nativa de js, contiene entre otras propiedades el mensaje de error
 	constructor(message?: string) {
-	  super(message)
+	  super(message) //
 	  this.name = DomainExceptionCode.DEFAULT_DOMAIN_EXCEPTION
 	}
  }
