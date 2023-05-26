@@ -7,7 +7,7 @@ export class UserNameRequiredException extends DomainException {
   }
 
   static getMessage() {
-		return 'User name required'
+    return 'Name is required'
   }
 }
 
