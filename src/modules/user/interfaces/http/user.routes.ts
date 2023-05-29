@@ -33,11 +33,11 @@ class UserRouter {
 		*/
 		// desing pattern chain of responsability: https://refactoring.guru/es/design-patterns/chain-of-responsibility
 
-		this.expressRouter.post('/', controller.insert)
-		this.expressRouter.get('/', controller.list)
-		this.expressRouter.post('/:guid', controller.listOne)
-		this.expressRouter.put('/:guid', controller.update)
-		this.expressRouter.delete('/:guid', controller.delete)
+		this.expressRouter.post('/insert', controller.insert)
+		this.expressRouter.get('/list', controller.list)
+		this.expressRouter.post('/listOne/:guid', controller.listOne)
+		this.expressRouter.put('/update/:guid', controller.update)
+		this.expressRouter.delete('/delete/:guid', controller.delete)
 	}
 }
 

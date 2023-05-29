@@ -114,7 +114,8 @@ export default class UserInfraestructure implements UserRepository {
 		})
 
 		if (userFound) {
-			userFound.active == false
+			userFound.active = false
+			 
 			const UserEntity = await repo.save(userFound)
 			const emailResult = EmailVO.create(UserEntity.email)
 			if (emailResult.isErr()) {

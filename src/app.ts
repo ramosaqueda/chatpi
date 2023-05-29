@@ -7,6 +7,7 @@ class App {
 	constructor() {
 		this.expressApp = express()
 		this.mountHealtCheck()
+		this.mountMiddlewares()
 		this.mountRoutes()
 		this.mountError()
 	}
@@ -14,6 +15,10 @@ class App {
 		this.expressApp.use('/', routerHealt)
 	}
 
+	mountMiddlewares() {
+		this.expressApp.use(express.json())
+		this.expressApp.use(express.urlencoded({ extended: true }))
+	 }
 	mountError(): void {
 		this.expressApp.use(HandlerErrors.notFound)
 	}

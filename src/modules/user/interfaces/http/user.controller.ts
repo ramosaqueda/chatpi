@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from 'express'
-
 import UserApplication from '../../application/user.application'
 import UserFactory from '../../domain/user-factory'
 import { EmailVO } from '../../domain/value-objects/email.VO'
@@ -28,8 +27,7 @@ Esto es útil cuando deseas ejecutar una serie de funciones de midd
 
 
 	async insert(req: Request, res: Response, next: NextFunction) {
-		console.log(req.body)
-		const { name, lastname, email, password } = req.body
+		 const { name, lastname, email, password } = req.body
 		const emailResult = EmailVO.create(email)
 		if (emailResult.isErr()) {
 		const err: IError = new Error(emailResult.error.message)
@@ -48,6 +46,7 @@ Esto es útil cuando deseas ejecutar una serie de funciones de midd
 		const result = new UserInsertMapping().execute(data.properties())
 		res.status(201).json(result)
 		}
+		res.status(200).json({"message":"ok"})
 	}
 
 
@@ -94,8 +93,11 @@ Esto es útil cuando deseas ejecutar una serie de funciones de midd
 			return res.json(result)
 		}
 	}
+
 	async delete(req: Request, res: Response, next: NextFunction) {
 		const guid = req.params.guid
+		 
+
 		const guidResult = GuidVO.create(guid)
 		if (guidResult.isErr()) {
 			const err: IError = new Error(guidResult.error.message)
