@@ -1,6 +1,6 @@
 import { ValueObject } from './vo.class'
 import { UserEmailInvalidException } from '../exceptions/user.exception'
-import {err, ok, Result} from 'neverthrow' 
+import { err, ok, Result } from 'neverthrow'
 interface EmailProps {
 	value: string
 }
@@ -12,16 +12,14 @@ export class EmailVO extends ValueObject<EmailProps> {
 		super(props)
 	}
 
-	static create(email: string) : EmailResult{
+	static create(email: string): EmailResult {
 		if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/gi)) {
 			//throw new Error("It's not a valid email address") //este error podria generar problemas, ya que la lanzarse el error, ete deja pegado el server.
 			return err(new UserEmailInvalidException())
-			
 		}
 
 		//return new EmailVO({ value: email })
-		return ok( new EmailVO({value:email})
-		)
+		return ok(new EmailVO({ value: email }))
 	}
 
 	get value(): string {

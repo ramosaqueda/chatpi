@@ -1,30 +1,29 @@
-import User from '../domain/user'
-import { UserRepository } from "../domain/user.repository";
-
+import User, {UserUpdate} from '../domain/user'
+import { UserRepository } from '../domain/user.repository'
 
 export default class UserApplication {
-    //Principio solid: Inversión de depenecias. dependemos del repositorio
-    //Patrón de diseño: injection dependeny, que permite aplicar el principio solid anteior https://desarrolloweb.com/articulos/patron-diseno-contenedor-dependencias.html
+	//Principio solid: Inversión de depenecias. dependemos del repositorio
+	//Patrón de diseño: injection dependeny, que permite aplicar el principio solid anteior https://desarrolloweb.com/articulos/patron-diseno-contenedor-dependencias.html
 
-    constructor(private readonly userRepository: UserRepository) {}
+	constructor(private readonly userRepository: UserRepository) {}
 
-  insert(user: User) {
-    return this.userRepository.insert(user)
-  }
+	insert(user: User) {
+		return this.userRepository.insert(user)
+	}
 
-  list() {
-    return this.userRepository.list()
-  }
+	list() {
+		return this.userRepository.list()
+	}
 
-  listOne(guid: string) {
-    return this.userRepository.listOne(guid)
-  }
+	listOne(guid: string) {
+		return this.userRepository.listOne(guid)
+	}
 
-  update(guid: string, user: Partial<UserUpdate>) {
-    return this.userRepository.update(guid, user)
-  }
+	update(guid: string, user: Partial<UserUpdate>) {
+		return this.userRepository.update(guid, user)
+	}
 
-  delete(guid: string) {
-    return this.userRepository.delete(guid)
-  }
+	delete(guid: string) {
+		return this.userRepository.delete(guid)
+	}
 }

@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\dfir_\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add nevertrhow -SE
+  C:\Program Files\nodejs\node.exe C:\Users\ramos\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Users\dfir_\AppData\Local\Microsoft\WindowsApps;C:\adb;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\dfir_\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dfir_\AppData\Local\Programs\Python\Python311\;C:\Users\dfir_\AppData\Local\Programs\Python\Launcher\;C:\Users\dfir_\AppData\Local\Microsoft\WindowsApps;C:\Users\dfir_\AppData\Roaming\npm
+  C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\ramos\AppData\Local\Microsoft\WindowsApps;C:\Users\ramos\AppData\Roaming\npm;C:\Users\ramos\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.2\bin;
 
 Yarn version: 
   1.22.19
@@ -14,55 +14,47 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/nevertrhow: Not found
-      at params.callback [as _callback] (C:\Users\dfir_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
-      at self.callback (C:\Users\dfir_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
-      at Request.emit (node:events:513:28)
-      at Request.<anonymous> (C:\Users\dfir_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
-      at Request.emit (node:events:513:28)
-      at IncomingMessage.<anonymous> (C:\Users\dfir_\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
-      at Object.onceWrapper (node:events:627:28)
-      at IncomingMessage.emit (node:events:525:35)
-      at endReadableNT (node:internal/streams/readable:1359:12)
-      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
 
 npm manifest: 
   {
   	"name": "chat_pi",
   	"version": "1.0.0",
   	"description": "",
-  	"main": "index.js",
+  	"main": "index.ts",
   	"scripts": {
-  		"dev": "nodemon src/index.ts",
-  		"format": "prettier --write .",
-  		"lint": "eslint . --ext .ts",
-  		"lint:fix": "eslint --fix ."
+  	  "dev": "nodemon src/index.ts",
+  	  "format": "prettier --write .",
+  	  "lint": "eslint . --ext .ts",
+  	  "lint:fix": "eslint --fix ."
   	},
   	"keywords": [],
   	"author": "",
   	"license": "ISC",
-  	"devDependencies": {
-  		"@types/bcryptjs": "2.4.2",
-  		"@types/node": "18.15.11",
-  		"@types/uuid": "9.0.1",
-  		"@typescript-eslint/eslint-plugin": "5.57.1",
-  		"@typescript-eslint/parser": "5.57.1",
-  		"express": "4.18.2",
-  		"nodemon": "2.0.22",
-  		"prettier": "2.8.7",
-  		"reflect-metadata": "0.1.13",
-  		"ts-node": "10.9.1",
-  		"typescript": "5.0.3"
-  	},
   	"dependencies": {
-  		"@types/express": "4.17.17",
-  		"bcryptjs": "2.4.3",
-  		"eslint": "^8.37.0",
-  		"mysql2": "3.3.1",
-  		"typeorm": "0.3.16",
-  		"uuid": "9.0.0"
+  	  "bcryptjs": "2.4.3",
+  	  "class-validator": "0.14.0",
+  	  "express": "4.18.2",
+  	  "mysql2": "3.3.0",
+  	  "neverthrow": "6.0.0",
+  	  "typeorm": "0.3.15",
+  	  "uuid": "9.0.0"
+  	},
+  	"devDependencies": {
+  	  "@types/bcryptjs": "2.4.2",
+  	  "@types/express": "4.17.17",
+  	  "@types/uuid": "9.0.1",
+  	  "@typescript-eslint/eslint-plugin": "5.57.1",
+  	  "@typescript-eslint/parser": "5.57.1",
+  	  "eslint": "8.37.0",
+  	  "nodemon": "2.0.22",
+  	  "prettier": "2.8.7",
+  	  "reflect-metadata": "0.1.13",
+  	  "ts-node": "10.9.1",
+  	  "typescript": "5.0.3"
   	}
-  }
+   }
 
 yarn manifest: 
   No manifest
@@ -1418,6 +1410,11 @@ Lockfile:
     version "0.6.3"
     resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
     integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
+  
+  neverthrow@6.0.0:
+    version "6.0.0"
+    resolved "https://registry.yarnpkg.com/neverthrow/-/neverthrow-6.0.0.tgz#bacd7661cade296ccc5c35760bb3b679214155b6"
+    integrity sha512-kPZKRs4VkdloCGQXPoP84q4sT/1Z+lYM61AXyV8wWa2hnuo5KpPBF2S3crSFnMrOgUISmEBP8Vo/ngGZX60NhA==
   
   nodemon@2.0.22:
     version "2.0.22"

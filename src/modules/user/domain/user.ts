@@ -1,5 +1,5 @@
 import { IEntity } from '../../shared/entity.interface'
-import { EmailVO } from './value-objects/email.vo'
+import { EmailVO } from './value-objects/email.VO'
 // Principio SOLID: Interface Segregation
 interface UserRequired {
 	//Definimos los campos requeridos para crear el usuario.
@@ -12,7 +12,7 @@ interface UserRequired {
 interface userOptional {
 	//campos opcionales para crear el usuario o automaticamente
 	refreshToken: string
-	active: boolean	
+	active: boolean
 	guid: string
 }
 
@@ -24,7 +24,6 @@ export interface UserUpdate {
 
 //https://www.typescriptlang.org/docs/handbook/utility-types.html
 export type UserProperties = Required<UserRequired> & Partial<userOptional>
-
 
 export default class User implements IEntity<UserProperties, UserUpdate> {
 	private name: string
@@ -42,23 +41,21 @@ export default class User implements IEntity<UserProperties, UserUpdate> {
 
 	properties(): UserProperties {
 		return {
-		  name: this.name,
-		  lastname: this.lastname,
-		  email: this.email,
-		  password: this.password,
-		  refreshToken: this.refreshToken,
-		  active: this.active,
-		  guid: this.guid,
+			name: this.name,
+			lastname: this.lastname,
+			email: this.email,
+			password: this.password,
+			refreshToken: this.refreshToken,
+			active: this.active,
+			guid: this.guid,
 		}
-	  }
-	
+	}
 
-
-	  update(fields: UserUpdate) {
+	update(fields: UserUpdate) {
 		Object.assign(this, fields)
-	  }
-	
-	  delete() {
+	}
+
+	delete() {
 		this.active = false
-	  }
+	}
 }
