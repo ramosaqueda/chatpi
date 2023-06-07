@@ -46,7 +46,7 @@ Esto es útil cuando deseas ejecutar una serie de funciones de midd
 		const result = new UserInsertMapping().execute(data.properties())
 		res.status(201).json(result)
 		}
-		res.status(200).json({"message":"ok"})
+
 	}
 
 
@@ -96,7 +96,7 @@ Esto es útil cuando deseas ejecutar una serie de funciones de midd
 
 	async delete(req: Request, res: Response, next: NextFunction) {
 		const guid = req.params.guid
-		 
+
 
 		const guidResult = GuidVO.create(guid)
 		if (guidResult.isErr()) {
